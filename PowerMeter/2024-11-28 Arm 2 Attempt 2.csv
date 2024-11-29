@@ -1,18 +1,4 @@
-Optical Power Monitor
-6.1.4945.818
-Delimiter Used: , ','
-
-Start of Measurement , 11/28/2024 13:47:45
-Sample Interval , 1 s
-, PM100D 15100936
-Type, PM100D
-Serialnumber, P0011539
-Sensor, S120C
-SensorSerialnumber, 15100936
-Wavelength / Responsivity, 635 nm
-
-,,,PM100D 15100936, 
-Samples ,Date (MM/dd/yyyy) ,Time of day (hh:mm:ss) ,Power (W),
+Samples ,Date (MM/dd/yyyy) ,Time of day (hh:mm:ss) ,Power (W)
 0, 11/28/2024, 13:47:45.071,0.000327
 1, 11/28/2024, 13:47:46.564,0.00032746
 2, 11/28/2024, 13:47:47.580,0.00032742
