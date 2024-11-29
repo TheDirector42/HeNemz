@@ -1,35 +1,61 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
-def fft(x):
-    N = len(x)
-    if N == 1:
-        return x
-    twiddle_factors = np.exp(-2j * np.pi * np.arange(N//2) / N)
-    x_even = fft(x[::2]) # yay recursion!
-    x_odd = fft(x[1::2])
-    return np.concatenate([x_even + twiddle_factors * x_odd,
-                           x_even - twiddle_factors * x_odd])
+# Step 1: Load and parse the dataset
+def load_dataset(filename):
+    with open(filename, 'r') as file:
+        lines = file.readlines()
 
-# Simulate a tone + noise
-sample_rate = 1e6
-f_offset = 0.2e6 # 200 kHz offset from carrier
-N = 1024
-t = np.arange(N)/sample_rate
-s = np.exp(2j*np.pi*f_offset*t)
-n = (np.random.randn(N) + 1j*np.random.randn(N))/np.sqrt(2) # unity complex noise
-r = s + n # 0 dB SNR
+    # Skip metadata and locate the header
+    for i, line in enumerate(lines):
+        if line.startswith("Measurement"):
+            header_index = i
+            break
 
-# Perform fft, fftshift, convert to dB
-X = fft(r)
-X_shifted = np.roll(X, N//2) # equivalent to np.fft.fftshift
-X_mag = 10*np.log10(np.abs(X_shifted)**2)
+    # Extract data from the lines below the header
+    data_lines = lines[header_index + 1:]
+    data = []
+    for line in data_lines:
+        values = line.strip().split('\t')
+        try:
+            # Keep only the 'TotalPower[dBm]' column (index 10)
+            data.append([float(values[10])])  # Column 10 corresponds to TotalPower[dBm]
+        except ValueError:
+            continue
 
-# Plot results
-f = np.linspace(sample_rate/-2, sample_rate/2, N)/1e6 # plt in MHz
-plt.plot(f, X_mag)
-plt.plot(f[np.argmax(X_mag)], np.max(X_mag), 'rx') # show max
-plt.grid()
-plt.xlabel('Frequency [MHz]')
-plt.ylabel('Magnitude [dB]')
-plt.show()
+    data = np.array(data)
+
+    return data  # Return data without padding
+
+# Step 2: Clean and analyze data using numpy.fft
+def clean_and_analyze(filename):
+    data = load_dataset(filename)
+    
+    # Remove NaN or invalid values
+    data = data[np.isfinite(data)]
+    
+    # Normalize data (optional)
+    data -= np.mean(data)
+    data /= np.std(data)
+    
+    # Perform FFT using numpy's fft
+    X = np.fft.fft(data.flatten())  # Flatten to 1D for FFT
+    X_shifted = np.fft.fftshift(X)  # Shift for centered spectrum
+    X_mag = 10 * np.log10(np.abs(X_shifted)**2)
+
+    # Plot the results
+    N = len(data)
+    f = np.linspace(-0.5, 0.5, N)  # Frequency axis normalized
+    plt.figure(figsize=(10, 6))
+    plt.plot(f, X_mag, label="FFT Magnitude")
+    plt.xlabel('Frequency (normalized)')
+    plt.ylabel('Magnitude [dB]')
+    plt.title('FFT of Total Power')
+    plt.grid()
+    plt.legend()
+    plt.show()
+
+# Step 3: Execute the function with the correct path
+filename = os.path.join('Data Set', 'Beam Data_2024-11-29_11.48.54_#003.txt')
+clean_and_analyze(filename)
