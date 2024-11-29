@@ -1,61 +1,75 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
-import os
 
-# Step 1: Load and parse the dataset
-def load_dataset(filename):
-    with open(filename, 'r') as file:
-        lines = file.readlines()
+# FFT function (same as before)
+def fft(x):
+    N = len(x)
+    if N == 1:
+        return x
+    twiddle_factors = np.exp(-2j * np.pi * np.arange(N // 2) / N)
+    x_even = fft(x[::2])  # Recursion
+    x_odd = fft(x[1::2])
+    return np.concatenate([x_even + twiddle_factors * x_odd,
+                           x_even - twiddle_factors * x_odd])
 
-    # Skip metadata and locate the header
-    for i, line in enumerate(lines):
-        if line.startswith("Measurement"):
-            header_index = i
-            break
+# Process the specific file (PowerMeter\2024-11-28 Both Arms.csv)
+def process_file(file_path):
+    try:
+        # Read the CSV file with comma delimiter (standard CSV format)
+        data = pd.read_csv(file_path, delimiter=',', skiprows=1, engine='python')  # Skip the first row if metadata
+        
+        # Debugging output: check the first few rows to inspect the data
+        print("Data preview:\n", data.head())
+        print("Data columns:", data.columns)
 
-    # Extract data from the lines below the header
-    data_lines = lines[header_index + 1:]
-    data = []
-    for line in data_lines:
-        values = line.strip().split('\t')
-        try:
-            # Keep only the 'TotalPower[dBm]' column (index 10)
-            data.append([float(values[10])])  # Column 10 corresponds to TotalPower[dBm]
-        except ValueError:
-            continue
+        # Rename columns to match the data structure
+        data.columns = ["Samples", "Date", "Time", "Power (W)"]
 
-    data = np.array(data)
+        # Convert "Power (W)" to numeric (float), and handle any errors (e.g., NaN values)
+        data["Power (W)"] = pd.to_numeric(data["Power (W)"], errors='coerce')
+        data = data.dropna(subset=["Power (W)"])  # Drop rows where "Power (W)" is NaN
 
-    return data  # Return data without padding
+        return data
+    except Exception as e:
+        print(f"Error reading the file: {e}")
+        return None
 
-# Step 2: Clean and analyze data using numpy.fft
-def clean_and_analyze(filename):
-    data = load_dataset(filename)
+# Function to perform FFT on the power data
+def perform_fft_on_power_data(power_data, sample_rate=1):
+    N = len(power_data)
+    t = np.arange(N) / sample_rate  # Time array
+
+    # Use the FFT function on the power data
+    X = np.fft.fft(power_data)  # Using np.fft.fft for performance
+    X_shifted = np.roll(X, N // 2)  # Shift zero frequency to center
+    X_mag = 10 * np.log10(np.abs(X_shifted) ** 2)  # Magnitude in dB
+
+    return X_mag, t
+
+# Main function to process the specific file and perform FFT
+def process_and_fft_specific_file(file_path):
+    # Process the file
+    data = process_file(file_path)  # Process the CSV file
+    if data is None:
+        print("Failed to process the file.")
+        return
     
-    # Remove NaN or invalid values
-    data = data[np.isfinite(data)]
+    power_data = data["Power (W)"].values  # Extract power data
     
-    # Normalize data (optional)
-    data -= np.mean(data)
-    data /= np.std(data)
+    # Perform FFT on the power data
+    X_mag, t = perform_fft_on_power_data(power_data)
     
-    # Perform FFT using numpy's fft
-    X = np.fft.fft(data.flatten())  # Flatten to 1D for FFT
-    X_shifted = np.fft.fftshift(X)  # Shift for centered spectrum
-    X_mag = 10 * np.log10(np.abs(X_shifted)**2)
-
     # Plot the results
-    N = len(data)
-    f = np.linspace(-0.5, 0.5, N)  # Frequency axis normalized
-    plt.figure(figsize=(10, 6))
-    plt.plot(f, X_mag, label="FFT Magnitude")
-    plt.xlabel('Frequency (normalized)')
-    plt.ylabel('Magnitude [dB]')
-    plt.title('FFT of Total Power')
-    plt.grid()
-    plt.legend()
+    sample_rate = 1  # Define sample rate (in Hz, adjust as needed)
+    f = np.linspace(-sample_rate / 2, sample_rate / 2, len(X_mag))  # Frequency (in Hz)
+    plt.plot(f, X_mag)
+    plt.title(f"FFT of Power Data from {file_path}")
+    plt.xlabel("Frequency [Hz]")
+    plt.ylabel("Magnitude [dB]")
+    plt.grid(True)
     plt.show()
 
-# Step 3: Execute the function with the correct path
-filename = os.path.join('Data Set', 'Beam Data_2024-11-29_11.48.54_#003.txt')
-clean_and_analyze(filename)
+# Example usage
+file_path = r'PowerMeter/2024-11-28 Arm 1 Attempt 2.csv'  # Update with the path to your file
+process_and_fft_specific_file(file_path)
