@@ -71,5 +71,5 @@ def process_and_fft_specific_file(file_path):
     plt.show()
 
 # Example usage
-file_path = r'PowerMeter/2024-11-28 Arm 1 Attempt 2.csv'  # Update with the path to your file
+file_path = r'PowerMeter/2024-11-28 Arm 2 Attempt 2.csv'  # Update with the path to your file
 process_and_fft_specific_file(file_path)
