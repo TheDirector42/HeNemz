@@ -1,5 +1,5 @@
-### <p style="font-size:30px">Heading without horizontal rule</p>
-# Introduction
+### <p style="font-size:30px">Introduction</p>
+
 The purpose of this experiment was to utilise wave interference phenomena to identify possible impacts on an interference pattern using a Michelson interferometer with an adjustable beam length and a Helium Neon (HeNe) laser.
 
 Interferometry is a measurement method of wave interference utilising the principle of superposition. This principle states that when two (or more) waves cross at a point, the displacement of the point is the sum of the two waves displacement (Bryan & Hellemans, 2004, p. 695). Interferometers work with electromagnetic waves to measure the inference pattern, when the waves are at peak construction or deconstruction. 
@@ -15,8 +15,8 @@ Interferometers rely on the superposition principal and nature of light waves to
 In this experiment we explored the impact of beam length and horizontal shift on the interference pattern. 
 
 After constructing the interferometer, the power measured of the final interference beam had major fluctuations between 0.3 and 0.7 micro watts. To determine the major contributing factors to the fluctuation a Fast Fourier Transform (FFT) was applied to the recorded data. 
-# Materials and Methods
-## materials
+### <p style="font-size:30px">Materials and Methods</p>
+### <p style="font-size:30p">materials</p>
 List the components used, including:
 * Laser source
 * Beam splitter
@@ -24,7 +24,7 @@ List the components used, including:
 * Adjustable translation stage
 * Power meter
 * Mounts, screws
-# Setup Construction
+### <p style="font-size:30px">Setup construction</p>
 ![Interferometer diagram](<Images/Images for Report/Mach-Zender Interferometer Diagram Correct.png>)
 <small> *Figure 2. Mach-Zender Beam splitter diagram slightly modified from: (ChaosFlaws, 2016)*
 
@@ -43,14 +43,14 @@ To ensure simplicity in construction, an initial position was chosen for the sec
 ![Beam path](<Images/Images for Report/Beam path.png>)
  <small> *figure 4. Visualised beam path of the laser*
 
-# Challenges and Adjustments 
+### <p style="font-size:20px">Challenges and adjustments</p>
 To confirm that the beam-splitter is 50%-50%, the power meter was placed the indicated point on each arm (figure 1. Red power meters) and it was determined that they had a percentage difference of 0.1% (Appendix 1) favoring arm two. This difference has an adverse effect on the interference pattern of the two beams as mentioned in the introduction. To combat this limitation two 0.1 ND filters were fastened intercepting arm two, reducing the beam path's intensity to 0.331 microwatts, a 0.004 difference to arm ones 0.327 microwatts, Decreasing the percentage difference to 0.001% (Appendix 1). This was decided to be reasonable enough to conduct the experiment. 
 
 When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in *figure 3* were adjusted until the mirror was perpendicular to the table.
 
-# Results and Observations
+### <p style="font-size:30px">Results and Observations</p>
 To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected data for half an hour 
-## Interference Patterns
+### <p style="font-size:30px">Sources of interferance</p>
 
 
 
@@ -69,10 +69,8 @@ CUEMATH. (2023). Percent Difference. Retrieved from https://www.cuemath.com/comm
 
 
 Wood, D. (2024). Reflection: Angle of Incidence, Curved Surfaces & Diffusion. Retrieved from https://study.com/academy/lesson/reflection-angle-of-incidence-curved-surfaces-diffusion.html#:~:text=The%20law%20of%20reflection%20says,surface%20(angle%20of%20reflection)
-
 # Appendices
-## Appendix 1
-(CUEMATH, 2023)
+### <p style="font-size:20px">Appendix 1</p> <p style="font-size:13px">(CUEMATH, 2023)</p>
 
 <ins>% difference= $\frac{difference}{Average}\times100$ </ins>
 
