@@ -1,4 +1,7 @@
-### <p style="font-size:30px">Introduction</p>
+
+<h1> <p style="font-size:24px">Mach-Zender Interferometer Experiment Report </h1>
+<p style="font-size:12px">Keisha Valenzuela and Javier Bates</p><br><p style="font-size:9px">valenzuela.keisha07@gmail.com</p>
+<p style="font-size:30px">Introduction</p></h1>
 
 The purpose of this experiment was to utilise wave interference phenomena to identify possible impacts on an interference pattern using a Michelson interferometer with an adjustable beam length and a Helium Neon (HeNe) laser.
 
@@ -17,7 +20,7 @@ In this experiment we explored the impact of beam length and horizontal shift on
 After constructing the interferometer, the power measured of the final interference beam had major fluctuations between 0.3 and 0.7 micro watts. To determine the major contributing factors to the fluctuation a Fast Fourier Transform (FFT) was applied to the recorded data. 
 ### <p style="font-size:30px">Materials and Methods</p>
 ### <p style="font-size:30p">materials</p>
-List the components used, including:
+List of components used:
 * Laser source
 * Beam splitter
 * Mirrors
@@ -46,7 +49,7 @@ To ensure simplicity in construction, an initial position was chosen for the sec
 ### <p style="font-size:20px">Challenges and adjustments</p>
 To confirm that the beam-splitter is 50%-50%, the power meter was placed the indicated point on each arm (figure 1. Red power meters) and it was determined that they had a percentage difference of 0.1% (Appendix 1) favoring arm two. This difference has an adverse effect on the interference pattern of the two beams as mentioned in the introduction. To combat this limitation two 0.1 ND filters were fastened intercepting arm two, reducing the beam path's intensity to 0.331 microwatts, a 0.004 difference to arm ones 0.327 microwatts, Decreasing the percentage difference to 0.001% (Appendix 1). This was decided to be reasonable enough to conduct the experiment. 
 
-When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in *figure 3* were adjusted until the mirror was perpendicular to the table.
+When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in *figure 3* were carefully adjusted until the mirror was perpendicular to the table.
 
 ### <p style="font-size:30px">Results and Observations</p>
 To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected and tabled data for twenty minuets. As the sample rate of the meter was every second the table had 1200 rows of data. This data set can be found at https://github.com/TheDirector42/HeNemzacsses (contact authors to acess the repo). 
@@ -54,7 +57,7 @@ To understand how the length of the beam affects the output of an interferometer
 ![magnitude of beam vs 1200 sec](image/InterferometerExperimentReport/1733463633814.png)
 <medium>*figure 5. Graph of beam magnitude over time*
 
-<big> The Stage was translated at 600 seconds. This is present in the data as a shift in wave interferance as the wave passed peak construction before shifting into deconstructive interferance for the last 500 seconds. 
+<big> *figure 5* presents the trend of the beams power over 1200 seconds. It shows that the fluctiation of the beam magnitude is highest when moving between peaks and troughs, when at peak construction (600-700 seconds) the beams power is visually the most stable. 
 
 ### <p style="font-size:30px">Sources of interferance</p>
 
