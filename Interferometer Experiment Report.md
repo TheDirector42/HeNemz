@@ -1,4 +1,7 @@
-### <p style="font-size:30px">Introduction</p>
+
+<h1> <p style="font-size:24px">Mach-Zender Interferometer Experiment Report </h1>
+<p style="font-size:12px">Keisha Valenzuela and Javier Bates</p><br><p style="font-size:9px">valenzuela.keisha07@gmail.com</p>
+<p style="font-size:30px">Introduction</p></h1>
 
 The purpose of this experiment was to investiage how varying beam path length and horizontal alignment affect interference patterns produced by a Michelson interfermoeter using a Helium-Neon (HeNe) laser.
 
@@ -20,15 +23,6 @@ After constructing the interferometer, the power measured of the final interfere
 ### <p style="font-size:30px">Materials and Methods</p>
 
 ### <p style="font-size:30p">materials</p>
-
-List the components used, including:
-
-- Laser source
-- Beam splitter
-- Mirrors
-- Adjustable translation stage
-- Power meter
-- Mounts, screws
 
 ### <p style="font-size:30px">Setup construction</p>
 
@@ -52,13 +46,12 @@ The horizontal shift knob was used to rotate the mirror, changing the angle of r
 
 ### <p style="font-size:20px">Challenges and adjustments</p>
 
-To confirm that the beam-splitter is 50%-50%, the power meter was placed the indicated point on each arm (figure 1. Red power meters) and it was determined that they had a percentage difference of 0.1% (Appendix 1) favoring arm two. This difference has an adverse effect on the interference pattern of the two beams as mentioned in the introduction. To combat this limitation two 0.1 ND filters were fastened intercepting arm two, reducing the beam path's intensity to 0.331 microwatts, a 0.004 difference to arm ones 0.327 microwatts, Decreasing the percentage difference to 0.001% (Appendix 1). This was decided to be reasonable enough to conduct the experiment.
+
 
 When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in _figure 3_ were adjusted until the mirror was perpendicular to the table.
 
 ### <p style="font-size:30px">Results and Observations</p>
 
-To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected data for half an hour
 
 ### <p style="font-size:30px">Sources of interferance</p>
 
