@@ -49,7 +49,13 @@ To confirm that the beam-splitter is 50%-50%, the power meter was placed the ind
 When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in *figure 3* were adjusted until the mirror was perpendicular to the table.
 
 ### <p style="font-size:30px">Results and Observations</p>
-To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected data for half an hour 
+To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected and tabled data for twenty minuets. As the sample rate of the meter was every second the table had 1200 rows of data. This data set can be found at https://github.com/TheDirector42/HeNemzacsses (contact authors to acess the repo). 
+
+![magnitude of beam vs 1200 sec](image/InterferometerExperimentReport/1733463633814.png)
+<medium>*figure 5. Graph of beam magnitude over time*
+
+<big> The Stage was translated at 600 seconds. This is present in the data as a shift in wave interferance as the wave passed peak construction before shifting into deconstructive interferance for the last 500 seconds. 
+
 ### <p style="font-size:30px">Sources of interferance</p>
 
 
