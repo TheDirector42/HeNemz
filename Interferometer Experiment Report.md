@@ -1,6 +1,6 @@
 
-<h1> <p style="font-size:24px">Mach-Zender Interferometer Experiment Report </h1>
-<p style="font-size:12px">Keisha Valenzuela and Javier Bates</p><br><p style="font-size:9px">valenzuela.keisha07@gmail.com</p>
+<p style="font-size:24px">Mach-Zender Interferometer Experiment Report </h1>
+<p style="font-size:12px">Keisha Valenzuela and Javier Bates</p> <p style="font-size:9px">valenzuela.keisha07@gmail.com</p>
 <p style="font-size:30px">Introduction</p></h1>
 
 The purpose of this experiment was to utilise wave interference phenomena to identify possible impacts on an interference pattern using a Michelson interferometer with an adjustable beam length and a Helium Neon (HeNe) laser.
@@ -12,10 +12,11 @@ To construct the interferometer correctly, understanding about how light interac
 ![Law of refelction](<Images/Images for Report/Law of reflection diagram.png>)
 <small> *figure 1. Visual of the law of reflection*
 
-<big>
-Interferometers rely on the superposition principal and nature of light waves to produce interference fringes visualised as dark spaces in projected light. The experiment relies on the symmetry of all elements; If the two beams intensity are unequal, the conclusion you draw from changing variables would be unreliable due to the absence of a base measurement. In this experiment the ‘base measurement’ would be when the beams align at all peaks, showing equal fringes. This cannot happen if the beams are different intensities as the beams do not equally contribute to the peaks. 
+<big> Interferometers rely on the superposition principal and nature of light waves to produce interference fringes visualised as dark spaces in projected light. The experiment relies on the symmetry of all elements; If the two beams intensity are unequal, the conclusion you draw from changing variables would be unreliable due to the absence of a base measurement. In this experiment the ‘base measurement’ would be when the beams align at all peaks, showing equal fringes. This cannot happen if the beams are different intensities as the beams do not equally contribute to the peaks. 
 
 In this experiment we explored the impact of beam length and horizontal shift on the interference pattern. 
+
+ The data drawn from the report requires understnding of the power sign convention.The powers polarity is detirmened by the equation: $P=\frac{W}{t}$. Work (w) is the transfer of energy via a force (Ghadban & Friedl, 2023). When work is being done energy is being used to deliver power, this is denoted by a positive sign, When energy is being put into a system the power sign is negitive. As time cannot be negitive, work deterimines if the power is negitive or positive (LibreTexts, 2024).
 
 After constructing the interferometer, the power measured of the final interference beam had major fluctuations between 0.3 and 0.7 micro watts. To determine the major contributing factors to the fluctuation a Fast Fourier Transform (FFT) was applied to the recorded data. 
 ### <p style="font-size:30px">Materials and Methods</p>
@@ -31,14 +32,19 @@ List of components used:
 ![Interferometer diagram](<Images/Images for Report/Mach-Zender Interferometer Diagram Correct.png>)
 <small> *Figure 2. Mach-Zender Beam splitter diagram slightly modified from: (ChaosFlaws, 2016)*
 
-<big> The first step was to tighten the bases of all elements to match the same height as the laser placing the optical elements before the laser and center the beam roughly in the center of the element.
+<big> 
+1. All bases were adjusted to ensure each element was the smae height as the laser
+2. location of the first mirror was identified, allowing a translation stage to be screwed underneath it. This required a readjustment of the mirror due to the added height.
+3. 
+
+The first step was to tighten the bases of all elements to match the same height as the laser placing the optical elements before the laser and center the beam roughly in the center of the element.
 
 The approximate location of the first mirror of arm one was identified. This position was marked and the translation stage was screwed into the table using the marked area as a guide. The first mirror was screwed into the right of the translation stage, and it was rotated slightly left. To track the beams movement a white card was held up and moved alongside the mirror. After reaching an approximate right angle the second mirror was placed in the beams path. This was a challenge due to the translation stage not being wide enough to accommodate both the mirrors’ bases. This was fixed by increasing the angle that the first mirror faced at to take up less horizontal space (*adjustments seen on figure 4*).
 
 To ensure simplicity in construction, an initial position was chosen for the second beam-splitter. The third mirror of arm one was positioned along the same row as the second beam-splitter as symmetry is crucial to the success of the interferometer. To construct the second arm a mirror was fastened at the intersection of the two beam-splitters, no adjustments was done to the angle of the mirror at this time. 
  
  ![Mirror diagram](<Images/Images for Report/mirror diagram pptx.jpg>)
- <Small> *Figure 3. Diagram of a Thorlabs mirror, denoting its adjusters.*
+ <Small> *Figure 3. Schematic of a Thorlabs mirror, denoting its adjusters.*
  <big>
  
  The horizontal shift knob was used to rotate the mirror, changing the angle of reflection as mentioned in the introduction to bounce into the beam-splitter.All the mirrors were adjusted until the output beam was a single dot seen *figure 4*. To be as accurate as possible, one arm was continuously blocked and unblocked to spot if there was any movement from one beam to the next.This process was repeated until there was no visual shift to the dot when each beam was blocked individually.
@@ -52,12 +58,16 @@ To confirm that the beam-splitter is 50%-50%, the power meter was placed the ind
 When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in *figure 3* were carefully adjusted until the mirror was perpendicular to the table.
 
 ### <p style="font-size:30px">Results and Observations</p>
-To understand how the length of the beam affects the output of an interferometer, the power meter was positioned at the output and collected and tabled data for twenty minuets. As the sample rate of the meter was every second the table had 1200 rows of data. This data set can be found at https://github.com/TheDirector42/HeNemzacsses (contact authors to acess the repo). 
+To understand how the length of the beam affects the output of an interferometer, the beam profiler was positioned at the output and collected and tabled data for twenty minuets. As the sample rate of the meter was every second the table had 1200 rows of data. This data set can be found at https://github.com/TheDirector42/HeNemzacsses (contact authors to acess the repo). 
 
 ![magnitude of beam vs 1200 sec](image/InterferometerExperimentReport/1733463633814.png)
 <medium>*figure 5. Graph of beam magnitude over time*
 
-<big> *figure 5* presents the trend of the beams power over 1200 seconds. It shows that the fluctiation of the beam magnitude is highest when moving between peaks and troughs, when at peak construction (600-700 seconds) the beams power is visually the most stable. 
+<big> *figure 5* presents the trend of the beams power over 1200 seconds. The power sign convention is used to deterimine that energy is entering the system as the power is negitive. This is expected as the power of the laser is being deliverd to the beam profiler. 
+It can be seen that an increase occurs at 600 seconds 
+It shows that the fluctiation of the beam magnitude is highest when moving between peaks and troughs, peak power occurs at 600-700 seconds.
+
+
 
 ### <p style="font-size:30px">Sources of interferance</p>
 
@@ -76,6 +86,9 @@ ChaosFlaws. (2016). Outcome of Mach-Zehnder interferometer experiment. Retrieved
 
 CUEMATH. (2023). Percent Difference. Retrieved from https://www.cuemath.com/commercial-math/percent-difference/
 
+Ghadban, M., & Friedl, E. (2023). Work | Definition, Formula & Examples. Retrieved from https://study.com/academy/lesson/work-definition-characteristics-and-examples.html#:~:text=Work%20is%20defined%20as%20the,%2C%20negative%2C%20or%20even%20zero
+
+LibreTexts. (2024). Sign conventions. Retrieved from https://eng.libretexts.org/Workbench/Introduction_to_Circuit_Analysis/01%3A_Basic_Concepts_and_Quantitites/1.09%3A_Sign_conventions
 
 Wood, D. (2024). Reflection: Angle of Incidence, Curved Surfaces & Diffusion. Retrieved from https://study.com/academy/lesson/reflection-angle-of-incidence-curved-surfaces-diffusion.html#:~:text=The%20law%20of%20reflection%20says,surface%20(angle%20of%20reflection)
 # Appendices
