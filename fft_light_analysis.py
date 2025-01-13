@@ -32,7 +32,7 @@ def plot_spectrogram(power_data, sample_rate=1):
     plt.xlabel('Time [s]')
     plt.colorbar(label='Intensity [dB]')
     plt.show()
-
+"""
 # Process a single CSV file
 def process_file(file_path):
     try:
@@ -117,3 +117,4 @@ def main():
 # Run the program
 if __name__ == "__main__":
     main()
+"""

@@ -23,31 +23,39 @@ After constructing the interferometer, the power measured of the final interfere
 ### <p style="font-size:30px">Materials and Methods</p>
 
 ### <p style="font-size:30p">materials</p>
+* HeNe laser with mount 
+* Kinematic mirror mount, KM100 Thorlabs
+* Precision Kinematic Mirror, Mount KS2 Thorlabs
+* UV Fused Silica Broadband Plate Beamsplitters (Coating: 350 - 1100 nm) Thorlabs
+* BB03-E03 - Ø7.0 mm Broadband Dielectric Mirror, 750 - 1100 nm Thorlabs
+* PT1 - 1" Translation Stage with Standard Micrometer, 1/4"-20 Taps Thorlabs
+* S120C - Standard Photodiode Power Sensor, Si, 400 - 1100 nm, 50 nW - 50 mW 
+* BC106N-VIS - CCD Camera Beam Profiler, Ø30 µm - 6.6 mm, 350 - 1100 nm Thorlabs
+* DET110 - High Speed Si Photo Detector, 17.5MHz BW, 350 to 1100nm Thorlabs
 
 ### <p style="font-size:30px">Setup construction</p>
 
-![Interferometer diagram](<Images/Images for Report/Mach-Zender Interferometer Diagram Correct.png>)
-<small> _Figure 2. Mach-Zender Beam splitter diagram slightly modified from: (ChaosFlaws, 2016)_
+![Interferometer diagram](image/InterferometerExperimentReport/1734493374662.png)
+<small> _Figure 2. Mach-Zender Beam splitter diagram modified from: (ChaosFlaws, 2016)_
 
-<big> The first step was to tighten the bases of all elements to match the same height as the laser placing the optical elements before the laser and center the beam roughly in the center of the element.
+<big> 
 
-The approximate location of the first mirror of arm one was identified. This position was marked and the translation stage was screwed into the table using the marked area as a guide. The first mirror was screwed into the right of the translation stage, and it was rotated slightly left. To track the beams movement a white card was held up and moved alongside the mirror. After reaching an approximate right angle the second mirror was placed in the beams path. This was a challenge due to the translation stage not being wide enough to accommodate both the mirrors’ bases. This was fixed by increasing the angle that the first mirror faced at to take up less horizontal space (_adjustments seen on figure 4_).
+The first step was to tighten the bases of all elements to match the same height as the laser, placing the optical elements before the laser and centering the beam roughly in the center of each element.
 
-To ensure simplicity in construction, an initial position was chosen for the second beam-splitter. The third mirror of arm one was positioned along the same row as the second beam-splitter as symmetry is crucial to the success of the interferometer. To construct the second arm a mirror was fastened at the intersection of the two beam-splitters, no adjustments was done to the angle of the mirror at this time.
+The approximate location of mirror B was identified. The translation stage was screwed into the table, mirror B was screwed into the right of the translation stage, and it was rotated slightly left. To track the beams movement a white card was held up and moved alongside the mirror. After reaching an approximate right angle mirror C was placed in the beams path. This was a challenge due to the translation stage width being too small to accommodate both the mirrors’ bases. This was fixed by increasing mirror B's angle, ocuppying less horizontal space (_adjustments seen on figure 4_).
+
+To ensure simplicity in construction, an initial position for the second beam-splitter was chosen. Mirror D was positioned in line to the second beam-splitter, this ensures symmetry. To construct arm two, mirror A was fastened at the intersection of the two beam-splitters, no adjustments was done to the angle of any mirror at this time.
 
 ![Mirror diagram](<Images/Images for Report/mirror diagram pptx.jpg>)
 <Small> _Figure 3. Diagram of a Thorlabs mirror, denoting its adjusters._
 <big>
 
-The horizontal shift knob was used to rotate the mirror, changing the angle of reflection as mentioned in the introduction to bounce into the beam-splitter.All the mirrors were adjusted until the output beam was a single dot seen _figure 4_. To be as accurate as possible, one arm was continuously blocked and unblocked to spot if there was any movement from one beam to the next.This process was repeated until there was no visual shift to the dot when each beam was blocked individually.
+The horizontal shift knob was used to rotate the mirror, changing the angle of reflection of the beam, mentioned in the introduction, into the beam-splitter. All the mirrors were adjusted until the output beam was a single dot seen _figure 4_. To be as accurate as possible, one arm was continuously blocked and unblocked to spot if there was any movement from one beam to the next. This process was repeated until there was no visual shift to the dot when each beam was blocked individually.
 
 ![Beam path](<Images/Images for Report/Beam path.png>)
 <small> _figure 4. Visualised beam path of the laser_
 
 ### <p style="font-size:20px">Challenges and adjustments</p>
-
-
-
 When adjusting the mirrors to form a single output, it was found that, though visually one dot, the fringes did not cover the entire dot. This indicated that the vertical alignment of the beams was off. To fix this problem the vertical shift knobs seen in _figure 3_ were adjusted until the mirror was perpendicular to the table.
 
 ### <p style="font-size:30px">Results and Observations</p>
